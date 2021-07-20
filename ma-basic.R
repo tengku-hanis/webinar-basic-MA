@@ -6,7 +6,7 @@ library(dmetar)
 ?DepressionMortality
 DepressionMortality
 
-# Fixed and random effect model
+# Fixed and random effect model ----
 ma <- metabin(event.e = event.e, 
               n.e = n.e,
               event.c = event.c,
@@ -20,20 +20,22 @@ ma <- metabin(event.e = event.e,
               hakn = T)
 ma
 
-# Forest plot
-forest(ma)
+# Forest plot ----
+forest(ma, sortvar = TE)
 
 # Publication bias
-metabias(ma, plotit = T, method.bias = "Egger")
-metabias(ma, plotit = T, method.bias = "Begg")
-metabias(ma, plotit = T, method.bias = "Deeks")
+ma2 <- update.meta(ma, comb.fixed = F)
 
-# Funnel plot
-funnel(ma)
+metabias(ma2, plotit = T, method.bias = "Egger")
+metabias(ma2, plotit = T, method.bias = "Begg")
+metabias(ma2, plotit = T, method.bias = "peters")
 
-# Outlier
-find.outliers(ma)
+# Funnel plot ----
+funnel(ma2, studlab = T)
 
-# Influential diagnostic
-InfluenceAnalysis(ma)
+# Outlier ----
+find.outliers(ma2)
+
+# Influential diagnostic ----
+InfluenceAnalysis(ma2)
 plot
