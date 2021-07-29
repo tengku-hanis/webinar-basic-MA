@@ -1,4 +1,4 @@
-# Material for webinar: Basic of meta-analysis in R 
+# Material for webinar: Intro to meta-analysis using R 
 Date:   
 Organiser: Epidemiology and statistical modelling team, USM    
 Content: 
