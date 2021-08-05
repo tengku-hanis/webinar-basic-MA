@@ -37,4 +37,8 @@ funnel(ma2, studlab = T)
 find.outliers(ma2)
 
 # Influential diagnostic ----
-InfluenceAnalysis(ma2)
+ma_inf <- InfluenceAnalysis(ma2, random = T)
+ma_inf
+
+plot(ma_inf, "baujat")
+plot(ma_inf, "influence")
