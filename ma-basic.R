@@ -13,7 +13,7 @@ ma <- metabin(event.e = event.e,
               n.c = n.c, 
               studlab = author,
               data = DepressionMortality,
-              method.tau = "PM", 
+              method.tau = "PM", #estimator
               comb.fixed = T, 
               comb.random = T,
               prediction = T, 
@@ -38,4 +38,3 @@ find.outliers(ma2)
 
 # Influential diagnostic ----
 InfluenceAnalysis(ma2)
-plot
